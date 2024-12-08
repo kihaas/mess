@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    <link rel="stylesheet" href="/static/css/chats.css">
+</head>
+<body>
+    <h1>Добро пожаловать в чат</h1>
+    <form method="post">
+        <label for="receiver">Выберите пользователя:</label>
+        <select name="receiver_id" id="receiver" required>
+            {% for user in users %}
+            <option value="{{ user.id }}">{{ user.username }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <label for="content">Сообщение:</label>
+        <textarea name="content" id="content" rows="3" required></textarea>
+        <br>
+        <button type="submit">Отправить</button>
+    </form>
+    <h2>Ваши сообщения:</h2>
+    <ul>
+        {% for message in messages %}
+        <li>{{ message.content }}</li>
+        {% endfor %}
+    </ul>
+    <a href="/logout">Выйти</a>
+    <script>
+        // Функция для отображения/скрытия пароля
+        function togglePassword(id) {
+            const passwordField = document.getElementById(id);
+            const type = passwordField.type === "password" ? "text" : "password";
+            passwordField.type = type;
+        }
+    </script>
+</body>
+</html>

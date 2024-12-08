@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="/static/css/register.css">
+</head>
+<body>
+    <h1>Регистрация в Мессенджере</h1>
+    <form action="/register" method="POST">
+        <label for="username">Логин</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">Пароль</label>
+        <div class="password-container">
+            <input type="password" id="password" name="password" required>
+            <span class="toggle-password" onclick="togglePassword('password')">👁</span>
+        </div>
+
+        <label for="confirm_password">Повторите пароль</label>
+        <div class="password-container">
+            <input type="password" id="confirm_password" name="confirm_password" required>
+            <span class="toggle-password" onclick="togglePassword('confirm_password')">👁</span>
+        </div>
+
+        <div class="checkbox-container">
+            <input type="checkbox" id="agree" name="agree" required>
+            <label for="agree">Согласен(а) на обработку персональных данных</label>
+        </div>
+
+        <button type="submit">Зарегистрироваться</button>
+
+        <div class="login-link">
+            <p>Уже есть аккаунт? <a href="/login">Войти</a></p>
+        </div>
+    </form>
+</body>
+</html>

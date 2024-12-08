@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Вход</title>
+    <link rel="stylesheet" href="/static/css/login.css">
+</head>    
+<body>
+    <h1>Добро пожаловать в Мессенджер</h1>
+    <form action="/login" method="POST">
+        <label for="username">Логин</label>
+        <input type="text" id="username" name="username" required>
+
+    <div<label for="password">Пароль</label>
+        <input type="password" id="password" name="password" required>
+        <span class="toggle-password" onclick="togglePassword('confirm-password')">👁</span>
+    </div>
+
+        <button type="submit">Войти</button>
+
+        <div class="register-link">
+            <p>Нет аккаунта? <a href="/register">Зарегистрироваться</a></p>
+        </div>
+    </form>
+    <script src="/static/js/togglePassword.js"></script>
+</body>
+</html>
